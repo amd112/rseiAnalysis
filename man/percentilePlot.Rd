@@ -4,7 +4,7 @@
 \alias{percentilePlot}
 \title{Create a plot of the cdf's of the log toxicity of various groups.}
 \usage{
-percentilePlot(data, value, log = "l")
+percentilePlot(data, value, log = "l", title = NA)
 }
 \arguments{
 \item{data}{is a list of dataframes. The list must be at least 1 long. Each of the dataframes must contain a column "concentration", and 
