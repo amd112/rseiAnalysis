@@ -4,6 +4,7 @@
 #' based off.
 #' @return Returns the same dataset, with the same column names, but adjusted so the columns are the corresponding percentile, rather than a count.
 #' @examples getPercentileData(toxic_1990)
+#' @export
 getPercentileData = function(data) {
   if (!"concentration" %in% names(data)){
     print("Data must have 'concentration' column.")

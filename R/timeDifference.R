@@ -9,7 +9,8 @@
 #' @param type should be either "rank" or "value", and defines the type of difference calculation being done. 
 #' @param value is the level of toxicity you would like to find the rank difference at, or the rank you would like to find the toxicity difference at. 
 #' @return Returns the difference of the changes between the two groups. Returns a positive value difference if group 1 improved more than group 2 over the interest period.
-#' Returns a negative rank difference if group 1 improved more than group 2 in the defined time period.
+#' Returns a negative rank difference if group 1 improved more than group 2 in the defined time period
+#' @export
 #' @examples timeDifference(0.5, t1990[, c("lconc", "hispanic")], t2010[, c("lconc", "hispanic")], t1990[, c("lconc", "white")], t2010[c("lconc", "white")], "value") 
 timeDifference = function(value, group1.1, group1.2, group2.1, group2.2, type) {
   if (type == "rank") {

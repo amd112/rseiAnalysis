@@ -10,6 +10,7 @@
 #' @return Returns a dataframe with two columns. The first is either 'percentile' or 'value' depending on the type chosen, and the second is the difference between
 #' groups over the selected time period at those input values. 
 #' @examples getTimeChangeData(t1990[, c("lconc", "hispanic")], t2010[, c("lconc", "hispanic")], t1990[, c("lconc", "white")], t2010[c("lconc", "white")], "value")
+#' @export
 getTimeChangeData = function(group1.1, group1.2, group2.1, group2.2, type, n = 20) {
   if (type == "value") {
     percentile = seq(0, 0.98, length.out = n)

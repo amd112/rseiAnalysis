@@ -8,6 +8,7 @@
 #' @return Returns a plot object, showing the differences in changes in the groups, that can be saved or directly displayed. Returns a positive 'value' difference if group 1 improved more than group 2 
 #' over the interest period.Returns a negative 'rank' difference if group 1 improved more than group 2 in the defined time period.
 #' @examples timeChangePlot(t1990, t2010, c("hispanic", "white", "black"), "value", 30)
+#' @export
 timeChangePlot = function(data1, data2, values, type, grain = 20) {
   for (i in values) {
     if (!i %in% names(data1) || !i %in% names(data2)) {

@@ -9,6 +9,7 @@
 #' @param log if log == "l", then it will plot the logged toxicity, if log == "", it will plot normal toxicity
 #' @import ggplot2
 #' @examples percentilePlot(list(toxic_1990), c("hispanic", "white"))
+#' @export
 percentilePlot = function(data, value, log = "l", title = NA) {
   for (i in 1:length(data)) {
     cur = data[i][[1]]

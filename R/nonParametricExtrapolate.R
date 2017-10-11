@@ -7,7 +7,6 @@
 #' @importFrom plyr ddply
 #' @export
 #' @examples nonParametricExtrapolate(t2010, t1990)
-#' 
 nonParametricExtrapolate = function(year, old) {  
   #sampling white and black individuals with probability equal to their allocations in time = t
   n_pop = sum(year$tot_pop)
@@ -30,5 +29,4 @@ nonParametricExtrapolate = function(year, old) {
   #plotting the true time = t distribution, as well as the modeled time = t distribution
   ggplot() + stat_ecdf(aes(w_est), color = "red") + stat_ecdf(aes(b_est), color = "blue") + stat_ecdf(aes(w_tru), color = "orange") + stat_ecdf(aes(b_tru), color = "green") + xlim(-4, 14) 
   ggplot() + geom_density(aes(w_tru), color = "orange", fill = "orange", alpha = 0.2) + geom_density(aes(b_tru), color = "green", fill = "green", alpha = 0.2) + xlim(-2, 14) + geom_density(aes(w_est), color = "red") + geom_density(aes(b_est), color = "blue")
-  return(c(w_est, b_est, w_tru, b_tru))
 }

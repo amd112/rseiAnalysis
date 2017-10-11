@@ -2,7 +2,7 @@ Package: rseiAnalysis
 Title: Documentation and RSEI Analysis 
 Version: 0.0.0.9000
 Authors@R: person("Anne", "Driscoll", email = "anne.driscoll@duke.edu", role = c("aut", "cre"))
-Description: This package, given very specific input formats, allows easy recreation of analysis. 
+Description: This package, given very specific input formats, allows easy recreation of analysis of environmental inequality. 
 Depends: R (>= 3.3.3)
 License: What license is it under?
 Encoding: UTF-8
