@@ -13,7 +13,7 @@ nonParametricExtrapolate = function(year, old) {
   old$lconcentration = log(old$concentration)
   w_pop = sum(year$white, na.rm = TRUE)
   n_pop = w_pop + sum(year$black, na.rm = TRUE)
-  sample = rbinom(n_pop/10000, 1, w_pop/n_pop) #so 1 represents white
+  sample = rbinom(n_pop/100000, 1, w_pop/n_pop) #so 1 represents white
   #drawing a concentration for each of the sampled individuals, now we have two collections of concentrations at t = 0
   w_samp = sample(old$lconcentration, sum(sample == 1), replace = TRUE, prob = old$white)
   b_samp = sample(old$lconcentration, sum(sample == 0), replace = TRUE, prob = old$black)
