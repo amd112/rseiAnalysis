@@ -21,10 +21,8 @@ nonParametricExtrapolate = function(year, old) {
   density_0 = ewcdf(old$lconcentration, weights = old$pop/sum(old$pop))
   w_perc = density_0(w_samp)
   b_perc = density_0(b_samp)
-  #boxplot(w_perc, b_perc) #
-  #plotting the percentiles for each group
   #sampling the concentration value for the drawn percentile at time = t
-  density_cur = ewcdf(year$lconcentration, weights = year$pop/sum(year$pop))
+  density_cur = ewcdf(year$lconcentration, weights = (year$pop+1)/sum(year$pop, na.rm = TRUE))
   w_est = quantile(density_cur, w_perc)
   b_est = quantile(density_cur, b_perc)
   w_tru = sample(year$lconcentration, sum(sample == 1), replace = TRUE, prob = year$white)
