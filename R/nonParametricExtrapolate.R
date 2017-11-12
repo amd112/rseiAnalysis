@@ -9,6 +9,8 @@
 #' @examples nonParametricExtrapolate(t2010, t1990)
 nonParametricExtrapolate = function(year, old) {  
   #sampling white and black individuals with probability equal to their allocations in time = t
+  year$lconcentration = log(year$concentration)
+  old$lconcentration = log(old$concentration)
   w_pop = sum(year$white, na.rm = TRUE)
   n_pop = w_pop + sum(year$black, na.rm = TRUE)
   sample = rbinom(n_pop/10000, 1, w_pop/n_pop) #so 1 represents white
