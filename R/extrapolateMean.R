@@ -4,13 +4,13 @@
 #' @param year This is the dataframe that contains your data. Each entry should be already be in census geography, and should contain the column 'concentration'.
 #' @param old This is the dataframe for the original year you'd like to extrapolate from. Must also contain "concentration".
 #' @param col This is a string with the name of the column that you'd like to extrapolate. Must have same name in both df's
-#' @param log Optional, parameter to specify that you'd like to simulate log toxicity. Set = "log" for log. 
+#' @param log Optional, parameter to specify that you'd like to simulate log toxicity. Set to any string for log. 
 #' @param n Optional, default set to 10000, that specifies how many times you draw from the toxicities. 
 #' @importFrom stringr str_pad
 #' @importFrom plyr ddply
 #' @export
 #' @examples nonParametricExtrapolate(t2010, t1990)
-extrapolateMean = function(year, old, col, log = NA, n = 10000, p = 0.5) {  
+extrapolateMean = function(year, old, col, log = NA, n = 10000) {  
   #sampling white and black individuals with probability equal to their allocations in time = t
   old = old[complete.cases(old), ]
   year = year[complete.cases(year), ]
