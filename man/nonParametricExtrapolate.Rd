@@ -16,5 +16,4 @@ This function allows you to get an estimate of the toxicity distribution for a g
 }
 \examples{
 nonParametricExtrapolate(t2010, t1990)
-
 }

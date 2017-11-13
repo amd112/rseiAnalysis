@@ -9,7 +9,7 @@
 #' @importFrom stringr str_pad
 #' @importFrom plyr ddply
 #' @export
-#' @examples nonParametricExtrapolate(t2010, t1990)
+#' @examples extrapolateMean(race_data[race_data$year == year, ], race_data[race_data$year == 1990, ], "black", n = 10)
 extrapolateMean = function(year, old, col, log = NA, n = 10000) {  
   #sampling white and black individuals with probability equal to their allocations in time = t
   old = old[complete.cases(old), ]

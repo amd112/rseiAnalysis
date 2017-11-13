@@ -23,7 +23,7 @@ that location. Column names are not important, but columns must be ordered with 
 }
 \value{
 Returns the difference of the changes between the two groups. Returns a positive value difference if group 1 improved more than group 2 over the interest period.
-Returns a negative rank difference if group 1 improved more than group 2 in the defined time period.
+Returns a negative rank difference if group 1 improved more than group 2 in the defined time period
 }
 \description{
 Find differences in group improvement over time
