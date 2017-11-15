@@ -1,7 +1,7 @@
 #' Create non-parametric estimate of what distributions would have been, given percentile placement stayed the same
 #'
 #' This function allows you to estimate the mean toxicity of a group, given their placement in the overall distribution had stayed the same over time.  
-#' @param year This is the dataframe that contains your data. Each entry should be already be in census geography, and should contain the column 'concentration'.
+#' @param year This is the dataframe that contains your data. Should contain no NA's. Each entry should be already be in census geography, and should contain the column 'concentration'.
 #' @param old This is the dataframe for the original year you'd like to extrapolate from. Must also contain "concentration".
 #' @param col This is a string with the name of the column that you'd like to extrapolate. Must have same name in both df's
 #' @param log Optional, parameter to specify that you'd like to simulate log toxicity. Set to any string for log. 
@@ -9,8 +9,8 @@
 #' @importFrom stringr str_pad
 #' @importFrom plyr ddply
 #' @export
-#' @examples extrapolateMean(race_data[race_data$year == year, ], race_data[race_data$year == 1990, ], "black", n = 10)
-extrapolateMean = function(year, old, col, log = NA, n = 10000) {  
+#' @examples extrapolate(race_data[race_data$year == year, ], race_data[race_data$year == 1990, ], "black", n = 10)
+extrapolate = function(year, old, col, log = NA, n = 10000) {  
   #sampling white and black individuals with probability equal to their allocations in time = t
   old = old[complete.cases(old), ]
   year = year[complete.cases(year), ]
